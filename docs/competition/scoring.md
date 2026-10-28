@@ -2,18 +2,18 @@
 
 Compare training detector output with the organisers' HUNT answers. This reports our precision and recall per Monster type, not the official TEST 1 accuracy score or an assumed points formula.
 
-Keep the private answers under gitignored `data/`. The provisional reader expects a UTF-8 CSV (BOM allowed), with the exact header `Monster Type,P_ID` and the type spellings from `submission.md`. Every ID stays text. When the real format arrives, adapt `read_answers` in `detector/score.py`; the comparison remains the same.
+Keep the private answers under gitignored `data/`. The real answers are `data/HUNT_P_IDs.csv`: UTF-8 with BOM, header `Monster,P_ID`. `read_answers` in `detector/score.py` maps their spellings Doppleganger, Shapeshifter and Undead to Doppelgänger, Shape-shifter and Undead Student. It also accepts the `Monster Type,P_ID` header used by the synthetic example. Every ID stays text.
 
 Run from the repo root:
 
 ```powershell
-.venv\Scripts\python.exe -m detector.score data/hunt_answers.csv
+.venv\Scripts\python.exe -m detector.score data/HUNT_P_IDs.csv
 ```
 
 The default reads all nine `out/hunt/<monster>.csv` files, including header-only files for rules finding nobody, and fails if any is missing. It ignores the combined file so an older combined copy cannot override fresh rule output. To score a saved combined file instead:
 
 ```powershell
-.venv\Scripts\python.exe -m detector.score data/hunt_answers.csv --predictions out/hunt/HUNT_combined.csv
+.venv\Scripts\python.exe -m detector.score data/HUNT_P_IDs.csv --predictions out/hunt/HUNT_combined.csv
 ```
 
 Each exact `(Monster Type, P_ID)` pair counts once. Overlaps remain separate findings; a correct ID under the wrong type is a false positive for the predicted type and a miss for the answer type. Precision is correct / predicted; recall is correct / answers. A zero denominator displays `N/A`. The report prints all nine types and full false-positive and missed-ID lists. It only reads inputs and prints to the terminal.
