@@ -39,6 +39,9 @@ A teaching period of the academic year: Autumn, Spring, Summer or Late Summer.
 **Week number**:
 The week of the academic year, where week 1 is the first week of the Autumn term.
 
+**Active week**:
+A week number in which a P_ID has at least one activity row.
+
 **Training dataset**:
 The 80% of the data given out for HUNT and BUILD.
 _Avoid_: train set, full data
