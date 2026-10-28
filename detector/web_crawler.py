@@ -1,8 +1,9 @@
 """Web Crawler: "Find students who in a block of 12 hours had activity with more than 200 lms_items or videos."
 
-Rule: more than 200 distinct LMS items and videos (counted together) in any rolling 12-hour window starting
-at one of the student's rows (TIMESTAMP, UTC). Distinct items keep repeat visits and Phantom duplicates out.
-Variant counts on training (fixed vs rolling blocks, rows vs distinct items, duplicates kept) are in monster-guide.md.
+Rule: at least 200 distinct LMS items and videos (counted together) in one fixed 12-hour block, 00:00-12:00 or
+12:00-24:00 UTC (TIMESTAMP). Distinct items keep repeat visits and Phantom duplicates out. Chosen against the
+HUNT answers (15 correct, 0 false positives); rolling windows added P00017445, a false positive.
+Variant counts (fixed vs rolling blocks, rows vs distinct items, UTC vs UK, > vs >=) are in monster-guide.md.
 
 Run: uv run python -m detector.web_crawler [training|test|predict]
 Writes out/hunt/web_crawler.csv for training, out/<split>/web_crawler.csv otherwise.
@@ -19,13 +20,12 @@ OUT = Path(__file__).resolve().parent.parent / "out"
 
 def find(con):
     return [r[0] for r in con.execute("""
-        WITH w AS (
-            SELECT P_ID, count(DISTINCT item_id) OVER (
-                PARTITION BY P_ID ORDER BY ts RANGE BETWEEN CURRENT ROW AND INTERVAL 12 hours FOLLOWING
-            ) AS n
+        WITH b AS (
+            SELECT P_ID, count(DISTINCT item_id) AS n
             FROM activity
+            GROUP BY P_ID, time_bucket(INTERVAL 12 hours, ts::TIMESTAMP)
         )
-        SELECT DISTINCT P_ID FROM w WHERE n > 200 ORDER BY P_ID
+        SELECT DISTINCT P_ID FROM b WHERE n >= 200 ORDER BY P_ID
     """).fetchall()]
 
 
