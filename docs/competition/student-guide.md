@@ -67,10 +67,17 @@ Bonuses:
 
 ## FINAL readiness clarification
 
-The FINAL checklist supplied by the team on 28 October 2026 clarifies that SHOWCASE slides must be complete and the detector/output ready to demonstrate before posting FINAL. PREDICT is optional: save any completed PREDICT work the team wants included. See the full [Before posting FINAL checklist](submission.md#before-posting-final). This clarification supplements the PDF conversion above.
+The FINAL checklist supplied by the team on 28 October 2026 clarifies that SHOWCASE slides must be complete and the detector/output ready to demonstrate before posting FINAL. PREDICT is optional (the organisers confirmed a FINAL is valid without it, but it earns extra points): save any completed PREDICT work the team wants included. See the full [Before posting FINAL checklist](submission.md#before-posting-final). This clarification supplements the PDF conversion above.
 
 ## Open questions (not stated in the guide)
 
+Organisers' answers, 28 Oct 2026, recorded under each question.
+
 - **The remaining 10% of data.** Training is 80% and TEST 1 is 10%. The name "TEST 1" hints at a hidden holdout (a TEST 2?), but the guide doesn't say.
+  - **Answer:** "The remaining 10% is for TEST 1." Our reading: there is no hidden TEST 2.
 - **How "TEST 1 accuracy" is scored** (exact P_ID match? does monster type have to be correct? are false positives penalised?). Ask the organisers on the day.
+  - **Answer:** Exact P_ID match, the monster type must be correct, and **false positives cost points**. So detection rules should favour precision: leave out a P_ID we're unsure of rather than guess.
 - **Which data PREDICT runs on.** The slide template says "Find early signs in 10%", and the PREDICT workbook says data only up to 14 Nov 2023 and only the 5 behavioural monsters. Is it the TEST 1 10%, or the remaining 10%?
+  - **Answer:** PREDICT uses data up to 14 Nov 2023. Which set (training or the TEST 1 10%) wasn't specified.
+- **Overlaps:** can one P_ID be submitted under more than one monster type?
+  - **Answer:** Yes, overlaps are allowed.
