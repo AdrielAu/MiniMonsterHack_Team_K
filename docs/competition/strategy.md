@@ -16,7 +16,7 @@ Win the raffle, which means collecting the most raffle entries. The big three ar
 
 ## Raffle-entry checklist
 
-- [ ] HUNT Excel (full P_ID list; Doppelgängers as both P_IDs, one per row) + HUNT slide(s)
+- [ ] HUNT Excel (full P_ID list; Doppelgängers as both P_IDs, one per row; template dummy IDs deleted, see `submission.md`) + HUNT slide(s)
 - [ ] Detector shown running + detector code
 - [ ] TEST 1 Excel (P_IDs + monster types) + TEST slide(s)
 - [ ] PREDICT Excel + slide(s) + code (if we do PREDICT)

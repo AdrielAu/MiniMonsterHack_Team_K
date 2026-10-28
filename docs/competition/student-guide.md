@@ -71,3 +71,4 @@ Bonuses:
 - **Is a FINAL post valid without PREDICT?** Ask the organisers on the day and record the answer here.
 - **How "TEST 1 accuracy" is scored** (exact P_ID match? does monster type have to be correct? are false positives penalised?). Ask the organisers on the day.
 - **What makes a FINAL "valid"** (does it need showcase material ready?).
+- **Which data PREDICT runs on.** The slide template says "Find early signs in 10%", and the PREDICT workbook says data only up to 14 Nov 2023 and only the 5 behavioural monsters. Is it the TEST 1 10%, or the remaining 10%?
