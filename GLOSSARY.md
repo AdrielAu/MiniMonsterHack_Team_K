@@ -84,5 +84,13 @@ The time of the team's valid FINAL Ready-for-checking post; the only timestamp t
 **Escape**:
 Being 1st or 2nd to post a valid FINAL Ready-for-checking post.
 
+**HUNT answers**:
+The correct HUNT P_IDs and Monster types, released privately by the organisers after our HUNT Checkpoint is checked.
+_Avoid_: model answers, ground truth
+
+**Scoring**:
+Our own precision and recall per Monster type, measured by comparing the Monster Detector's Training dataset output against the HUNT answers.
+_Avoid_: accuracy (that's the organisers' official TEST 1 accuracy score)
+
 **Raffle entry**:
 One chance in the prize raffle, earned from Checkpoints, bonuses and awards.
