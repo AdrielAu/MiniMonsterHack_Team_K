@@ -10,6 +10,7 @@ video_activity_by_view_fact, lms_item_activity_by_session_fact, plus `activity`
 """
 
 import sys
+from datetime import date
 from pathlib import Path
 
 import duckdb
@@ -27,23 +28,28 @@ PER_SPLIT = [
 TYPES = "{'LMS_ITEM_ID': 'VARCHAR'}"
 
 
-def _view(con, name, path):
+def _view(con, name, path, where=""):
     if not path.exists():
         raise FileNotFoundError(f"{path} missing: copy the organisers' data into data/ (see AGENTS.md)")
     # Views can't take bound parameters, so the path is inlined (quotes escaped).
     p = path.as_posix().replace("'", "''")
     types = f", types={TYPES}" if name.startswith("lms_item") else ""
-    con.execute(f"CREATE VIEW {name} AS SELECT * FROM read_csv('{p}', header=true, nullstr='null'{types})")
+    con.execute(f"CREATE VIEW {name} AS SELECT * FROM read_csv('{p}', header=true, nullstr='null'{types}){where}")
 
 
-def connect(split="training"):
+def connect(split="training", cutoff=None):
+    """cutoff ('YYYY-MM-DD'): keep only activity on or before that UK-local date (PREDICT's 14 Nov 2023 rule)."""
     if split not in SPLITS:
         raise ValueError(f"split must be one of {list(SPLITS)}")
+    where = ""
+    if cutoff is not None:
+        cutoff = date.fromisoformat(cutoff)  # validates before it's inlined into the view
+        where = f" WHERE CAST(timezone('Europe/London', TIMESTAMP) AS DATE) <= DATE '{cutoff}'"
     con = duckdb.connect(config={"TimeZone": "UTC"})
     for t in GENERAL:
         _view(con, t, DATA / "General Files" / f"la_mmh_{t}.csv")
     for t in PER_SPLIT:
-        _view(con, t, DATA / SPLITS[split] / f"la_mmh_{split}_{t}.csv")
+        _view(con, t, DATA / SPLITS[split] / f"la_mmh_{split}_{t}.csv", where if t.endswith("_fact") and "activity" in t else "")
     # One row per LMS session or video view. TIMESTAMP is UTC; ts_local is UK time.
     con.execute("""
         CREATE VIEW activity AS
