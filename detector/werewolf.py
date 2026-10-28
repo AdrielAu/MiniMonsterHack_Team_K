@@ -1,10 +1,10 @@
 """Werewolf: "Find students with spikes in activity throughout the Autumn and Spring Terms."
 
-Merge LMS and video, deduplicating activity content within each source, and count
-rows per UK-local date in Autumn and Spring. A spike has at least 40 rows and
-5 times the student's median count on active dates across those two terms.
-Consecutive spike dates form one burst; require two bursts in each term.
-Only P_IDs in person_dim qualify. Thresholds are provisional pending HUNT answers.
+Deadline rule calibrated on the six corrected HUNT answers. Shortlist students
+with repeated 3-9-day activity blocks, then apply the fitted tree's video rhythm
+and term-coverage cutoffs. See experiments/werewolf/ for the investigation.
+HUNT: six correct, two false positives. Held-out performance is poor; this is a
+provisional submission rule, not a validated general classifier.
 
 Run: uv run python -m detector.werewolf [training|test|predict]
 Writes out/hunt/werewolf.csv for training, out/<split>/werewolf.csv otherwise.
@@ -17,50 +17,63 @@ from pathlib import Path
 from detector.load import connect
 
 OUT = Path(__file__).resolve().parent.parent / "out"
-# shortcut: team-selected provisional thresholds; tune against released HUNT answers.
-MULTIPLIER = 5
-MIN_ROWS = 40
-MIN_BURSTS_PER_TERM = 2
-
-
-def find(con, multiplier=MULTIPLIER, min_rows=MIN_ROWS, min_bursts=MIN_BURSTS_PER_TERM):
+# shortcut: HUNT-fitted tree; revisit with more labelled cases after the deadline.
+def find(con):
     return [r[0] for r in con.execute("""
-        WITH lms AS (
-            SELECT DISTINCT * EXCLUDE (PIT_ID)
-            FROM lms_item_activity_by_session_fact
-        ), video AS (
-            SELECT DISTINCT * EXCLUDE (PVT_ID)
-            FROM video_activity_by_view_fact
-        ), merged AS (
-            SELECT P_ID, CAST(timezone('Europe/London', TIMESTAMP) AS DATE) AS DATE
-            FROM lms
-            UNION ALL
-            SELECT P_ID, CAST(timezone('Europe/London', TIMESTAMP) AS DATE) AS DATE
-            FROM video
-        ), daily AS (
-            SELECT a.P_ID, a.DATE, c.TERM, count(*) AS n
-            FROM merged a
-            JOIN calendar_dim c USING (DATE)
-            JOIN person_dim p USING (P_ID)
-            WHERE c.TERM IN ('Autumn', 'Spring')
+        WITH daily AS (
+            SELECT P_ID, source, CAST(ts_local AS DATE) AS d, count(*) AS n
+            FROM activity
             GROUP BY 1, 2, 3
-        ), baseline AS (
-            SELECT P_ID, median(n) AS med FROM daily GROUP BY P_ID
-        ), spikes AS (
-            SELECT P_ID, TERM, DATE,
-                   DATE - lag(DATE) OVER (PARTITION BY P_ID, TERM ORDER BY DATE) AS gap
-            FROM daily JOIN baseline USING (P_ID)
-            WHERE n >= ? AND n >= ? * med
+        ), islands AS (
+            SELECT *, d - CAST(row_number() OVER (
+                PARTITION BY P_ID, source ORDER BY d
+            ) AS INTEGER) AS grp
+            FROM daily
         ), bursts AS (
-            SELECT P_ID, TERM,
-                   count(*) FILTER (WHERE gap IS NULL OR gap > 1) AS n_bursts
-            FROM spikes GROUP BY P_ID, TERM
+            SELECT P_ID, source, min(d) AS start_d, max(d) AS end_d,
+                   count(*) AS n_days, min(n) AS min_n, max(n) AS max_n
+            FROM islands GROUP BY P_ID, source, grp
+        ), candidates AS (
+            SELECT DISTINCT P_ID FROM (
+                SELECT P_ID, source FROM bursts
+                GROUP BY P_ID, source
+                HAVING min(start_d) >= (
+                    SELECT min(DATE) FROM calendar_dim WHERE TERM = 'Autumn'
+                ) AND max(end_d) <= (
+                    SELECT max(DATE) FROM calendar_dim WHERE TERM = 'Spring'
+                ) AND count(*) >= 4
+                  AND min(min_n) >= 2 AND max(max_n) <= 4
+                  AND min(n_days) >= 3 AND max(n_days) <= 9
+            )
+        ), gaps AS (
+            SELECT P_ID, start_d - lag(start_d) OVER (
+                       PARTITION BY P_ID ORDER BY start_d
+                   ) AS cycle,
+                   start_d - lag(end_d) OVER (
+                       PARTITION BY P_ID ORDER BY start_d
+                   ) AS quiet_gap
+            FROM bursts WHERE source = 'video'
+        ), rhythm AS (
+            SELECT P_ID, stddev_pop(cycle) AS sd_cycle,
+                   min(quiet_gap) AS min_quiet
+            FROM gaps GROUP BY P_ID
+        ), hours AS (
+            SELECT P_ID, stddev_pop(extract(hour FROM ts_local)) AS sd_hour
+            FROM activity WHERE source = 'video' GROUP BY P_ID
+        ), coverage AS (
+            SELECT P_ID, count(*) FILTER (WHERE TERM = 'Spring') AS spring_days
+            FROM daily JOIN calendar_dim ON d = DATE
+            WHERE source = 'video' GROUP BY P_ID
         )
-        SELECT P_ID FROM bursts
-        GROUP BY P_ID
-        HAVING count(*) = 2 AND min(n_bursts) >= ?
+        SELECT P_ID FROM candidates
+        JOIN rhythm USING (P_ID)
+        JOIN hours USING (P_ID)
+        JOIN coverage USING (P_ID)
+        JOIN person_dim USING (P_ID)
+        WHERE sd_cycle <= 5.38 AND min_quiet <= 11
+          AND sd_hour > 3.98 AND spring_days >= 28
         ORDER BY P_ID
-    """, [min_rows, multiplier, min_bursts]).fetchall()]
+    """).fetchall()]
 
 
 if __name__ == "__main__":
