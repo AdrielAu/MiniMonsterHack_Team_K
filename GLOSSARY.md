@@ -33,6 +33,12 @@ _Avoid_: event, interaction (INTERACTION_COUNT is a separate thing)
 One running of a module in a given term, which students register on and which owns LMS items and videos.
 _Avoid_: course, class
 
+**Night-activity day**:
+A UK calendar date with at least one Activity row after midnight and at or before 05:00. A date may be both a Night-activity day and a Day-activity day.
+
+**Day-activity day**:
+A UK calendar date with at least one Activity row after 05:00 and before the next midnight.
+
 **Term**:
 A teaching period of the academic year: Autumn, Spring, Summer or Late Summer.
 
