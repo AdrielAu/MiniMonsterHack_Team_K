@@ -33,6 +33,9 @@ _Avoid_: event, interaction (INTERACTION_COUNT is a separate thing)
 One running of a module in a given term, which students register on and which owns LMS items and videos.
 _Avoid_: course, class
 
+**Activity spike**:
+A day with unusually many LMS and video Activity rows compared with the same student's usual daily activity. Werewolf behaviour repeats these spikes in both Autumn and Spring.
+
 **Night-activity day**:
 A UK calendar date with at least one Activity row after midnight and at or before 05:00. A date may be both a Night-activity day and a Day-activity day.
 
