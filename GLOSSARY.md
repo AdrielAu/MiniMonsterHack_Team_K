@@ -18,7 +18,7 @@ The category of monster types caused by faulty or impossible data: Phantom, Unde
 The category of monster types caused by a real student's unusual activity pattern: Ghost, Zombie, Vampire, Werewolf, Web Crawler.
 
 **Doppelgänger pair**:
-Two P_IDs with suspiciously identical activity; both are Doppelgängers and each is submitted on its own row.
+Two P_IDs where every activity row of one reappears, identical, under the other; both are Doppelgängers and each is submitted on its own row. The copy may cover only part of the original's activity (e.g. just its videos).
 
 ## Data
 
@@ -32,6 +32,12 @@ _Avoid_: event, interaction (INTERACTION_COUNT is a separate thing)
 **Module instance**:
 One running of a module in a given term, which students register on and which owns LMS items and videos.
 _Avoid_: course, class
+
+**Night-activity day**:
+A UK calendar date with at least one Activity row after midnight and at or before 05:00. A date may be both a Night-activity day and a Day-activity day.
+
+**Day-activity day**:
+A UK calendar date with at least one Activity row after 05:00 and before the next midnight.
 
 **Term**:
 A teaching period of the academic year: Autumn, Spring, Summer or Late Summer.
