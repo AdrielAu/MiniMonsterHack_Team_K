@@ -18,7 +18,7 @@ The category of monster types caused by faulty or impossible data: Phantom, Unde
 The category of monster types caused by a real student's unusual activity pattern: Ghost, Zombie, Vampire, Werewolf, Web Crawler.
 
 **Doppelgänger pair**:
-Two P_IDs with suspiciously identical activity; both are Doppelgängers and each is submitted on its own row.
+Two P_IDs where every activity row of one reappears, identical, under the other; both are Doppelgängers and each is submitted on its own row. The copy may cover only part of the original's activity (e.g. just its videos).
 
 ## Data
 
