@@ -37,3 +37,6 @@ venv/
 **/.impeccable/live/*.png
 # impeccable-ignore-end
 data/
+
+# Python bytecode
+__pycache__/
