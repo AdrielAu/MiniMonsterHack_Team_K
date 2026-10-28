@@ -24,3 +24,17 @@ Instructions for every coding agent in this repo (Claude Code, Codex, Antigravit
 ## Project
 
 Not set up yet. Add the stack and the build, test and run commands here once they exist.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues on AdrielAu/MiniMonsterHack_Team_K (via `gh`). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `GLOSSARY.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
