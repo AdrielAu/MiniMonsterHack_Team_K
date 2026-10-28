@@ -34,6 +34,6 @@ One small SQL rule per monster, written from the Monster Guide clue and run on t
 | Zombie | 25 |
 | Web Crawler | 16 |
 
-Total: 620 findings. Without Werewolf, the 588 findings cover 558 distinct students; rerun `uv run python -m detector.combine hunt` once `werewolf.csv` is pushed for the final figure (the Werewolf count comes from its ticket until then).
+Total: 620 findings across 586 distinct students.
 
 Overlaps, one line on the slide: 23 of the 25 Zombies are also Vampires (their long sessions run through the night); 4 Ghosts are also Undead Students.
