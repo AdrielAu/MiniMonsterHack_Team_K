@@ -1,0 +1,589 @@
+﻿Monster Type,P_ID
+Phantom,P00000097
+Phantom,P00000573
+Phantom,P00000693
+Phantom,P00000700
+Phantom,P00000987
+Phantom,P00001206
+Phantom,P00001743
+Phantom,P00001840
+Phantom,P00002108
+Phantom,P00002121
+Phantom,P00002383
+Phantom,P00003116
+Phantom,P00003175
+Phantom,P00003227
+Phantom,P00003361
+Phantom,P00004136
+Phantom,P00004259
+Phantom,P00004491
+Phantom,P00004514
+Phantom,P00004844
+Phantom,P00005337
+Phantom,P00005948
+Phantom,P00007447
+Phantom,P00007549
+Phantom,P00007614
+Phantom,P00007800
+Phantom,P00007921
+Phantom,P00008196
+Phantom,P00008215
+Phantom,P00008492
+Phantom,P00008600
+Phantom,P00008811
+Phantom,P00008975
+Phantom,P00008987
+Phantom,P00009143
+Phantom,P00009298
+Phantom,P00009959
+Phantom,P00010167
+Phantom,P00010223
+Phantom,P00010385
+Phantom,P00010516
+Phantom,P00010777
+Phantom,P00010948
+Phantom,P00011104
+Phantom,P00011697
+Phantom,P00011809
+Phantom,P00012037
+Phantom,P00012076
+Phantom,P00012713
+Phantom,P00013138
+Phantom,P00013390
+Phantom,P00014051
+Phantom,P00014157
+Phantom,P00014646
+Phantom,P00014866
+Phantom,P00014952
+Phantom,P00014989
+Phantom,P00015055
+Phantom,P00015401
+Phantom,P00015475
+Phantom,P00016824
+Phantom,P00016905
+Phantom,P00016919
+Phantom,P00016925
+Phantom,P00017115
+Phantom,P00017379
+Phantom,P00017394
+Phantom,P00017608
+Phantom,P00017871
+Phantom,P00017966
+Phantom,P00017972
+Phantom,P00018509
+Phantom,P00019270
+Phantom,P00020479
+Phantom,P00021320
+Phantom,P00021563
+Phantom,P00021588
+Ghost,P00000543
+Ghost,P00001068
+Ghost,P00001113
+Ghost,P00001155
+Ghost,P00001271
+Ghost,P00001277
+Ghost,P00001369
+Ghost,P00001380
+Ghost,P00001394
+Ghost,P00001403
+Ghost,P00001423
+Ghost,P00001439
+Ghost,P00001454
+Ghost,P00001621
+Ghost,P00001702
+Ghost,P00001793
+Ghost,P00001946
+Ghost,P00001970
+Ghost,P00002223
+Ghost,P00002518
+Ghost,P00002651
+Ghost,P00002733
+Ghost,P00002777
+Ghost,P00002812
+Ghost,P00003067
+Ghost,P00003356
+Ghost,P00003375
+Ghost,P00003587
+Ghost,P00003612
+Ghost,P00003646
+Ghost,P00003771
+Ghost,P00004182
+Ghost,P00004187
+Ghost,P00004371
+Ghost,P00004448
+Ghost,P00004498
+Ghost,P00004550
+Ghost,P00004666
+Ghost,P00004760
+Ghost,P00004847
+Ghost,P00004980
+Ghost,P00005021
+Ghost,P00005247
+Ghost,P00005251
+Ghost,P00005444
+Ghost,P00005594
+Ghost,P00005617
+Ghost,P00005733
+Ghost,P00005766
+Ghost,P00005838
+Ghost,P00005844
+Ghost,P00005862
+Ghost,P00005932
+Ghost,P00006250
+Ghost,P00006467
+Ghost,P00006485
+Ghost,P00006611
+Ghost,P00006728
+Ghost,P00006770
+Ghost,P00006772
+Ghost,P00006797
+Ghost,P00007520
+Ghost,P00007530
+Ghost,P00007556
+Ghost,P00007755
+Ghost,P00007793
+Ghost,P00007911
+Ghost,P00007912
+Ghost,P00008016
+Ghost,P00008114
+Ghost,P00008161
+Ghost,P00008231
+Ghost,P00008242
+Ghost,P00008259
+Ghost,P00008294
+Ghost,P00008340
+Ghost,P00008954
+Ghost,P00009217
+Ghost,P00009295
+Ghost,P00009685
+Ghost,P00009720
+Ghost,P00009826
+Ghost,P00009904
+Ghost,P00009941
+Ghost,P00010032
+Ghost,P00010209
+Ghost,P00010290
+Ghost,P00010403
+Ghost,P00010769
+Ghost,P00010917
+Ghost,P00010978
+Ghost,P00011141
+Ghost,P00011392
+Ghost,P00011481
+Ghost,P00011815
+Ghost,P00011991
+Ghost,P00012152
+Ghost,P00012341
+Ghost,P00012347
+Ghost,P00012354
+Ghost,P00012501
+Ghost,P00012618
+Ghost,P00012742
+Ghost,P00012874
+Ghost,P00013120
+Ghost,P00013185
+Ghost,P00013302
+Ghost,P00013436
+Ghost,P00013455
+Ghost,P00013634
+Ghost,P00013658
+Ghost,P00013793
+Ghost,P00013829
+Ghost,P00013892
+Ghost,P00013924
+Ghost,P00013969
+Ghost,P00014018
+Ghost,P00014093
+Ghost,P00014282
+Ghost,P00014528
+Ghost,P00014624
+Ghost,P00014825
+Ghost,P00014866
+Ghost,P00014916
+Ghost,P00015144
+Ghost,P00015303
+Ghost,P00015613
+Ghost,P00015883
+Ghost,P00015918
+Ghost,P00016013
+Ghost,P00016227
+Ghost,P00016310
+Ghost,P00016383
+Ghost,P00016487
+Ghost,P00016582
+Ghost,P00016590
+Ghost,P00016660
+Ghost,P00016793
+Ghost,P00016812
+Ghost,P00017094
+Ghost,P00017145
+Ghost,P00017197
+Ghost,P00017535
+Ghost,P00017765
+Ghost,P00017910
+Ghost,P00017961
+Ghost,P00018125
+Ghost,P00018152
+Zombie,P00000775
+Zombie,P00000806
+Zombie,P00001218
+Zombie,P00004100
+Zombie,P00004190
+Zombie,P00006020
+Zombie,P00006867
+Zombie,P00007971
+Zombie,P00008256
+Zombie,P00008823
+Zombie,P00008877
+Zombie,P00009298
+Zombie,P00009470
+Zombie,P00009650
+Zombie,P00009657
+Zombie,P00011278
+Zombie,P00012772
+Zombie,P00017031
+Zombie,P00017471
+Zombie,P00017805
+Zombie,P00017914
+Zombie,P00020056
+Zombie,P00020720
+Zombie,P00021098
+Zombie,P00021355
+Vampire,P00000775
+Vampire,P00000806
+Vampire,P00000974
+Vampire,P00001103
+Vampire,P00001130
+Vampire,P00001218
+Vampire,P00001243
+Vampire,P00001812
+Vampire,P00002030
+Vampire,P00002330
+Vampire,P00002392
+Vampire,P00002809
+Vampire,P00004100
+Vampire,P00004190
+Vampire,P00004410
+Vampire,P00004722
+Vampire,P00005461
+Vampire,P00005463
+Vampire,P00006020
+Vampire,P00006295
+Vampire,P00006450
+Vampire,P00006777
+Vampire,P00006867
+Vampire,P00007893
+Vampire,P00007910
+Vampire,P00007971
+Vampire,P00008256
+Vampire,P00008318
+Vampire,P00008793
+Vampire,P00008823
+Vampire,P00008846
+Vampire,P00008877
+Vampire,P00009096
+Vampire,P00009241
+Vampire,P00009470
+Vampire,P00009555
+Vampire,P00009650
+Vampire,P00009657
+Vampire,P00009719
+Vampire,P00009738
+Vampire,P00009760
+Vampire,P00010020
+Vampire,P00010108
+Vampire,P00010160
+Vampire,P00010234
+Vampire,P00010317
+Vampire,P00010497
+Vampire,P00010525
+Vampire,P00011430
+Vampire,P00011625
+Vampire,P00011873
+Vampire,P00012515
+Vampire,P00012648
+Vampire,P00012772
+Vampire,P00012915
+Vampire,P00013423
+Vampire,P00013552
+Vampire,P00013998
+Vampire,P00014118
+Vampire,P00014352
+Vampire,P00014353
+Vampire,P00014462
+Vampire,P00014692
+Vampire,P00014971
+Vampire,P00015234
+Vampire,P00015555
+Vampire,P00016479
+Vampire,P00017031
+Vampire,P00017471
+Vampire,P00017569
+Vampire,P00017623
+Vampire,P00017805
+Vampire,P00017821
+Vampire,P00017914
+Vampire,P00018641
+Vampire,P00018837
+Vampire,P00019390
+Vampire,P00019409
+Vampire,P00019440
+Vampire,P00019582
+Vampire,P00019697
+Vampire,P00020056
+Vampire,P00020511
+Vampire,P00020720
+Vampire,P00020984
+Vampire,P00021098
+Vampire,P00021323
+Vampire,P00021355
+Vampire,P00021362
+Vampire,P00021609
+Vampire,P00021837
+Undead Student,P00000174
+Undead Student,P00000673
+Undead Student,P00000814
+Undead Student,P00001095
+Undead Student,P00001260
+Undead Student,P00001322
+Undead Student,P00001620
+Undead Student,P00001716
+Undead Student,P00001868
+Undead Student,P00002095
+Undead Student,P00002127
+Undead Student,P00002205
+Undead Student,P00002647
+Undead Student,P00002744
+Undead Student,P00003081
+Undead Student,P00003108
+Undead Student,P00003155
+Undead Student,P00003418
+Undead Student,P00003447
+Undead Student,P00003620
+Undead Student,P00003662
+Undead Student,P00003862
+Undead Student,P00004036
+Undead Student,P00004132
+Undead Student,P00004134
+Undead Student,P00004687
+Undead Student,P00004727
+Undead Student,P00005227
+Undead Student,P00005263
+Undead Student,P00005336
+Undead Student,P00005594
+Undead Student,P00005626
+Undead Student,P00005668
+Undead Student,P00005688
+Undead Student,P00005778
+Undead Student,P00005790
+Undead Student,P00006013
+Undead Student,P00006185
+Undead Student,P00006557
+Undead Student,P00007186
+Undead Student,P00007422
+Undead Student,P00007766
+Undead Student,P00007911
+Undead Student,P00008382
+Undead Student,P00008862
+Undead Student,P00008986
+Undead Student,P00009077
+Undead Student,P00009295
+Undead Student,P00010084
+Undead Student,P00011210
+Undead Student,P00011460
+Undead Student,P00011605
+Undead Student,P00012004
+Undead Student,P00012795
+Undead Student,P00013022
+Undead Student,P00013349
+Undead Student,P00013973
+Undead Student,P00014003
+Undead Student,P00014553
+Undead Student,P00014652
+Undead Student,P00014834
+Undead Student,P00015029
+Undead Student,P00015293
+Undead Student,P00015338
+Undead Student,P00015547
+Undead Student,P00015684
+Undead Student,P00015880
+Undead Student,P00015883
+Undead Student,P00016175
+Undead Student,P00017529
+Undead Student,P00017530
+Undead Student,P00017537
+Undead Student,P00017581
+Undead Student,P00017844
+Undead Student,P00018057
+Undead Student,P00018146
+Undead Student,P00018309
+Undead Student,P00018664
+Undead Student,P00018806
+Undead Student,P00019372
+Undead Student,P00019660
+Undead Student,P00019755
+Undead Student,P00019910
+Undead Student,P00020502
+Undead Student,P00020685
+Undead Student,P00020788
+Undead Student,P00020933
+Undead Student,P00021224
+Undead Student,P00021399
+Undead Student,P00021856
+Undead Student,P00022023
+Undead Student,P00022151
+Doppelgänger,P00000065
+Doppelgänger,P00000512
+Doppelgänger,P00001387
+Doppelgänger,P00002959
+Doppelgänger,P00003142
+Doppelgänger,P00003382
+Doppelgänger,P00003504
+Doppelgänger,P00004030
+Doppelgänger,P00006439
+Doppelgänger,P00006903
+Doppelgänger,P00007309
+Doppelgänger,P00008029
+Doppelgänger,P00008152
+Doppelgänger,P00009037
+Doppelgänger,P00010434
+Doppelgänger,P00010770
+Doppelgänger,P00011436
+Doppelgänger,P00011491
+Doppelgänger,P00011616
+Doppelgänger,P00012287
+Doppelgänger,P00013039
+Doppelgänger,P00014044
+Doppelgänger,P00015570
+Doppelgänger,P00015800
+Doppelgänger,P00016398
+Doppelgänger,P00016841
+Doppelgänger,P00017482
+Doppelgänger,P00019901
+Doppelgänger,P00019929
+Doppelgänger,P00021322
+Doppelgänger,P00116388
+Doppelgänger,P00156136
+Doppelgänger,P00159448
+Doppelgänger,P00170988
+Doppelgänger,P00209491
+Doppelgänger,P00219495
+Doppelgänger,P00243419
+Doppelgänger,P00285442
+Doppelgänger,P00336066
+Doppelgänger,P00336081
+Doppelgänger,P00365560
+Doppelgänger,P00408220
+Doppelgänger,P00488189
+Doppelgänger,P00558159
+Doppelgänger,P00624727
+Doppelgänger,P00647364
+Doppelgänger,P00649204
+Doppelgänger,P00659653
+Doppelgänger,P00674844
+Doppelgänger,P00692729
+Doppelgänger,P00822937
+Doppelgänger,P00864284
+Doppelgänger,P00901311
+Doppelgänger,P00907330
+Doppelgänger,P00922502
+Doppelgänger,P00944765
+Doppelgänger,P00948045
+Doppelgänger,P00955083
+Doppelgänger,P00959148
+Doppelgänger,P00959179
+Web Crawler,P00000016
+Web Crawler,P00002450
+Web Crawler,P00006889
+Web Crawler,P00007696
+Web Crawler,P00009128
+Web Crawler,P00010833
+Web Crawler,P00012096
+Web Crawler,P00012188
+Web Crawler,P00014159
+Web Crawler,P00014989
+Web Crawler,P00015748
+Web Crawler,P00017445
+Web Crawler,P00019421
+Web Crawler,P00019768
+Web Crawler,P00020446
+Web Crawler,P00020694
+Shape-shifter,P00000169
+Shape-shifter,P00000497
+Shape-shifter,P00000946
+Shape-shifter,P00001177
+Shape-shifter,P00001187
+Shape-shifter,P00001213
+Shape-shifter,P00001362
+Shape-shifter,P00001876
+Shape-shifter,P00002396
+Shape-shifter,P00002412
+Shape-shifter,P00002509
+Shape-shifter,P00002716
+Shape-shifter,P00003128
+Shape-shifter,P00003172
+Shape-shifter,P00003485
+Shape-shifter,P00003729
+Shape-shifter,P00004385
+Shape-shifter,P00004591
+Shape-shifter,P00005189
+Shape-shifter,P00005347
+Shape-shifter,P00005752
+Shape-shifter,P00005827
+Shape-shifter,P00006196
+Shape-shifter,P00006433
+Shape-shifter,P00006918
+Shape-shifter,P00007404
+Shape-shifter,P00007915
+Shape-shifter,P00008068
+Shape-shifter,P00008170
+Shape-shifter,P00009089
+Shape-shifter,P00009130
+Shape-shifter,P00009156
+Shape-shifter,P00009776
+Shape-shifter,P00009899
+Shape-shifter,P00010053
+Shape-shifter,P00010102
+Shape-shifter,P00010426
+Shape-shifter,P00010481
+Shape-shifter,P00011275
+Shape-shifter,P00011483
+Shape-shifter,P00011554
+Shape-shifter,P00011645
+Shape-shifter,P00011915
+Shape-shifter,P00011971
+Shape-shifter,P00012184
+Shape-shifter,P00012317
+Shape-shifter,P00012752
+Shape-shifter,P00012872
+Shape-shifter,P00012997
+Shape-shifter,P00013017
+Shape-shifter,P00013221
+Shape-shifter,P00013433
+Shape-shifter,P00013718
+Shape-shifter,P00014195
+Shape-shifter,P00014240
+Shape-shifter,P00014294
+Shape-shifter,P00014434
+Shape-shifter,P00014822
+Shape-shifter,P00015506
+Shape-shifter,P00015873
+Shape-shifter,P00016102
+Shape-shifter,P00016474
+Shape-shifter,P00016942
+Shape-shifter,P00017234
+Shape-shifter,P00017455
+Shape-shifter,P00017500
+Shape-shifter,P00018141
+Shape-shifter,P00019337
+Shape-shifter,P00019555
+Shape-shifter,P00019776
+Shape-shifter,P00019828
+Shape-shifter,P00019967
+Shape-shifter,P00020558
+Shape-shifter,P00020703
+Shape-shifter,P00021085
+Shape-shifter,P00021411
+Shape-shifter,P00022096
+Shape-shifter,P00022261
+Shape-shifter,P00022297

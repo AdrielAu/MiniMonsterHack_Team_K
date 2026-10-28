@@ -19,6 +19,7 @@ Each workbook offers two routes: per-monster tabs feeding AUTO COMBINED, or MANU
 
 - **Code must never write the `.xlsx` directly.** AUTO COMBINED uses dynamic-array formulas (`FILTER`/`VSTACK`), and saving with openpyxl or similar breaks them.
 - Instead, the detector writes a paste-ready CSV per stage: two columns `Monster Type,P_ID`, one row per finding, with no extra columns. A human pastes it into MANUAL COMBINED in Excel and saves.
+- Build it with `uv run python -m detector.combine hunt` (or `test`, `predict`): it merges `out/<stage>/*.csv` into `out/<stage>/<STAGE>_combined.csv` and flags any missing monster type. Paste the data rows (no header) into A4 onwards; row 3 already holds the headers.
 - Monster Type must match the template's REFERENCE sheet **exactly**: `Phantom`, `Ghost`, `Zombie`, `Vampire`, `Undead Student`, `Doppelgänger`, `Werewolf`, `Web Crawler`, `Shape-shifter`. Note the umlaut, and the lowercase "s" in `Shape-shifter`.
 - Doppelgänger: both P_IDs of each pair, each on its own row.
 - P_IDs are kept as text with leading characters intact (e.g. `P000005255`). Check that Excel didn't reformat them after pasting.
