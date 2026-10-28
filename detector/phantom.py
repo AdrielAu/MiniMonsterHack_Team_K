@@ -13,19 +13,25 @@ from detector.load import connect
 
 
 def detect(con):
-    """Return sorted P_IDs with repeated rows, ignoring only PIT_ID/PVT_ID."""
+    """Return sorted P_IDs with repeated rows (ignoring only PIT_ID/PVT_ID) on at least 2 dates.
+
+    Duplicates confined to one date are a Zombie's replayed viewing block, not a Phantom (see monster-guide.md).
+    """
     return con.execute("""
-        SELECT DISTINCT P_ID FROM (
-            SELECT * EXCLUDE (PIT_ID)
-            FROM lms_item_activity_by_session_fact
-            GROUP BY ALL HAVING count(*) > 1
+        SELECT P_ID FROM (
+            SELECT P_ID, DATE FROM (
+                SELECT * EXCLUDE (PIT_ID)
+                FROM lms_item_activity_by_session_fact
+                GROUP BY ALL HAVING count(*) > 1
+            )
+            UNION ALL
+            SELECT P_ID, DATE FROM (
+                SELECT * EXCLUDE (PVT_ID)
+                FROM video_activity_by_view_fact
+                GROUP BY ALL HAVING count(*) > 1
+            )
         )
-        UNION
-        SELECT DISTINCT P_ID FROM (
-            SELECT * EXCLUDE (PVT_ID)
-            FROM video_activity_by_view_fact
-            GROUP BY ALL HAVING count(*) > 1
-        )
+        GROUP BY P_ID HAVING count(DISTINCT DATE) >= 2
         ORDER BY P_ID
     """).fetchall()
 
