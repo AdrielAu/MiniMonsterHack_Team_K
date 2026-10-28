@@ -11,3 +11,7 @@ Read before planning or building anything for the hackathon. The competition rul
 | `sources/` | Original PDFs and the data dictionary `.xlsx` | Only to resolve a conflict; the source wins (the actual data files win over everything) |
 
 Domain terms are defined in `/GLOSSARY.md`.
+
+## Open questions
+
+Unresolved points are listed under **Open questions** in `student-guide.md` (rules and scoring) and `monster-guide.md` (how to interpret each monster), and under **Known discrepancies** in `data-model.md`. If your work depends on one, don't silently pick an answer: ask the user, or state the assumption you made. Once it's settled, write the answer next to the question.
