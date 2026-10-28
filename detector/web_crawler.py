@@ -1,8 +1,7 @@
 """Web Crawler: "Find students who in a block of 12 hours had activity with more than 200 lms_items or videos."
 
-Rule: more than 200 activity rows (LMS + video together) in any rolling 12-hour window starting at one of
-the student's rows (TIMESTAMP, UTC). Exact duplicate rows (same P_ID, source, item, TIMESTAMP) count once,
-because they're Phantom evidence, not activity.
+Rule: more than 200 distinct LMS items and videos (counted together) in any rolling 12-hour window starting
+at one of the student's rows (TIMESTAMP, UTC). Distinct items keep repeat visits and Phantom duplicates out.
 Variant counts on training (fixed vs rolling blocks, rows vs distinct items, duplicates kept) are in monster-guide.md.
 
 Run: uv run python -m detector.web_crawler [training|test|predict]
@@ -20,12 +19,11 @@ OUT = Path(__file__).resolve().parent.parent / "out"
 
 def find(con):
     return [r[0] for r in con.execute("""
-        WITH a AS (SELECT DISTINCT P_ID, source, item_id, ts FROM activity),
-        w AS (
-            SELECT P_ID, count(*) OVER (
+        WITH w AS (
+            SELECT P_ID, count(DISTINCT item_id) OVER (
                 PARTITION BY P_ID ORDER BY ts RANGE BETWEEN CURRENT ROW AND INTERVAL 12 hours FOLLOWING
             ) AS n
-            FROM a
+            FROM activity
         )
         SELECT DISTINCT P_ID FROM w WHERE n > 200 ORDER BY P_ID
     """).fetchall()]
