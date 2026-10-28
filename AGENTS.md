@@ -28,7 +28,14 @@ Team K's entry to the Mini Monster Hack (28 Oct 2026). Rules: `docs/competition/
 
 ## Project
 
-A Monster Detector for Learning Analytics data (see `GLOSSARY.md`). Stack not chosen yet; add the stack and run commands here once they exist. No CI/CD or pytest: see the hackathon override in `docs/agents/coding-standards.md`.
+A Monster Detector for Learning Analytics data (see `GLOSSARY.md`). No CI/CD or pytest: see the hackathon override in `docs/agents/coding-standards.md`.
+
+**Stack:** Python 3.12 + DuckDB, managed with `uv` (`uv sync` once to install).
+
+- **Data:** copy the organisers' folders into `data/` (gitignored, never commit it): `data/General Files/`, `data/Training/`, `data/Test/`, `data/Predict/`.
+- **Loader:** `from detector.load import connect; con = connect("training")` (or `"test"`, `"predict"`) gives a DuckDB connection with every table as a view named without its prefix (`person_dim`, `lms_item_activity_by_session_fact`, ...) plus `activity`, a merged LMS + video timeline with `ts` (UTC) and `ts_local` (UK time).
+- **Check the loader:** `uv run python -m detector.load training` prints row counts.
+- Run detector scripts as modules from the repo root: `uv run python -m detector.<monster>`.
 
 ## Agent skills
 
