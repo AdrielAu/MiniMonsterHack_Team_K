@@ -2,17 +2,42 @@
 
 Hackathon on Learning Analytics activity data: find the hidden monsters, build a detector, test it on unseen data, and present it.
 
-## Data
+## Monsters
 
 **Monster**:
-A P_ID whose activity shows one of the monster types defined in the Monster Guide. *Provisional: refine once the Monster Guide is added.*
-_Avoid_: anomaly, unusual behaviour, outlier
+A P_ID that matches one of the nine monster types in the Monster Guide.
+_Avoid_: outlier, unusual behaviour, "anomaly" on its own
 
 **Monster type**:
-The named category of a Monster, as listed in the Monster Guide.
+One of the nine named kinds of Monster: Phantom, Ghost, Zombie, Vampire, Undead Student, Doppelgänger, Werewolf, Web Crawler, Shape-Shifter.
+
+**Data anomaly**:
+The category of monster types caused by faulty or impossible data: Phantom, Undead Student, Doppelgänger, Shape-Shifter.
+
+**Behavioural monster**:
+The category of monster types caused by a real student's unusual activity pattern: Ghost, Zombie, Vampire, Werewolf, Web Crawler.
+
+**Doppelgänger pair**:
+Two P_IDs with suspiciously identical activity; both are Doppelgängers and each is submitted on its own row.
+
+## Data
 
 **P_ID**:
-The identifier of one record subject in the dataset; the unit that submissions list and get scored on.
+The identifier of one person (student); the unit that submissions list and get scored on.
+
+**Activity row**:
+One row in either the LMS item session fact or the video view fact.
+_Avoid_: event, interaction (INTERACTION_COUNT is a separate thing)
+
+**Module instance**:
+One running of a module in a given term, which students register on and which owns LMS items and videos.
+_Avoid_: course, class
+
+**Term**:
+A teaching period of the academic year: Autumn, Spring, Summer or Late Summer.
+
+**Week number**:
+The week of the academic year, where week 1 is the first week of the Autumn term.
 
 **Training dataset**:
 The 80% of the data given out for HUNT and BUILD.
