@@ -7,6 +7,11 @@ Instructions for every coding agent in this repo (Claude Code, Codex, Antigravit
 - **Any code change** (writing, editing, refactoring or reviewing code): read `docs/agents/coding-standards.md` first and follow it.
 - **Any frontend, UI or visual design work**: read `docs/agents/frontend-workflow.md` first and follow its steps in order.
 - **Any video, motion graphic, captions or overlay**: load the `hyperframes` skill and read it before doing anything else.
+- **Any hackathon planning or build work**: read `docs/competition/README.md` first. Competition rules there override default assumptions.
+
+## Competition
+
+Team K's entry to the Mini Monster Hack (28 Oct 2026). Rules: `docs/competition/student-guide.md`. Our plan (accuracy through TEST 1, then speed to FINAL): `docs/competition/strategy.md`.
 
 ## Design truth
 
@@ -23,7 +28,7 @@ Instructions for every coding agent in this repo (Claude Code, Codex, Antigravit
 
 ## Project
 
-Not set up yet. Add the stack and the build, test and run commands here once they exist.
+A Monster Detector for Learning Analytics data (see `GLOSSARY.md`). Stack not chosen yet; add the stack and run commands here once they exist. No CI/CD or pytest: see the hackathon override in `docs/agents/coding-standards.md`.
 
 ## Agent skills
 

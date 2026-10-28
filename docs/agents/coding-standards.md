@@ -47,6 +47,8 @@ Test: would a senior engineer call this overcomplicated? If so, cut it.
 - Any logic with a branch, a loop, a parser, money or security leaves at least one small test behind.
 - For multi-step work, state a short plan with a check per step, then loop until each check passes.
 
+**Hackathon override (wins over everything in section 4):** no CI/CD, no pre-commit hooks and no pytest suite. The only check is the scoring script that compares detector output against the released HUNT P_IDs (see `docs/competition/strategy.md`). Speed over polish.
+
 ## 5. Reporting
 
 End every reply that changed code with:
