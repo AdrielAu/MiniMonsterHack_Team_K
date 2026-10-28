@@ -20,6 +20,10 @@ The category of monster types caused by a real student's unusual activity patter
 **Doppelgänger pair**:
 Two P_IDs where every activity row of one reappears, identical, under the other; both are Doppelgängers and each is submitted on its own row. The copy may cover only part of the original's activity (e.g. just its videos).
 
+**Copied activity row**:
+An activity row whose ID ends in `_COPY_<P_ID>`, naming the P_ID it sits under. A P_ID's copied activity rows all fall on one date, on modules it isn't registered on, so it appears to switch programme; it is the evidence for a Shape-Shifter.
+_Avoid_: duplicate row (that's Phantom evidence)
+
 ## Data
 
 **P_ID**:
