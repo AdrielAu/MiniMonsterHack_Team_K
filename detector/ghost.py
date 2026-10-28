@@ -3,8 +3,10 @@ very little for the rest of the academic year (later average weekly count of act
 average count of activity rows). Look at LMS and video activity."
 
 Rule: LMS and video rows together, placed in weeks by calendar WEEK_NUMBER (rows outside the calendar dropped).
-At least 3 of weeks 1-4 have a row, and (rows in weeks 5-52 / 48) < 0.1 * (rows in weeks 1-4 / 4).
-P_IDs missing from person_dim are dropped. Variant counts on training are in monster-guide.md.
+At least 3 of weeks 1-4 have a row, at least 400 rows in weeks 1-4, and
+(rows in weeks 5-52 / 48) < 0.2 * (rows in weeks 1-4 / 4).
+P_IDs missing from person_dim are dropped. The HUNT answers don't follow the clue's 10% (only 5 of 58 pass it),
+so the volume floor and 20% are the best-precision corner on HUNT. Variant counts are in monster-guide.md.
 
 Run: uv run python -m detector.ghost [training|test|predict]
 Writes out/hunt/ghost.csv for training, out/<split>/ghost.csv otherwise.
@@ -17,9 +19,12 @@ from pathlib import Path
 from detector.load import connect
 
 OUT = Path(__file__).resolve().parent.parent / "out"
+# shortcut: best-precision corner on HUNT (2 right, 6 FP); the clue's literal 10% scored 5 right, 143 FP.
+MIN_EARLY_ROWS = 400
+MAX_RATIO = 0.2
 
 
-def find(con):
+def find(con, min_early_rows=MIN_EARLY_ROWS, max_ratio=MAX_RATIO):
     return [r[0] for r in con.execute("""
         WITH wk AS (
             SELECT a.P_ID, c.WEEK_NUMBER AS w, count(*) AS n
@@ -34,9 +39,9 @@ def find(con):
             FROM wk GROUP BY 1
         )
         SELECT P_ID FROM p JOIN person_dim USING (P_ID)
-        WHERE active_early >= 3 AND later / 48 < 0.1 * early / 4
+        WHERE active_early >= 3 AND early >= ? AND later / 48 < ? * early / 4
         ORDER BY P_ID
-    """).fetchall()]
+    """, [min_early_rows, max_ratio]).fetchall()]
 
 
 if __name__ == "__main__":
