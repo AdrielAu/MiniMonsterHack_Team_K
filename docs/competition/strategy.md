@@ -10,7 +10,7 @@ Win the raffle, which means collecting the most raffle entries. The big three ar
 
 1. **Accuracy up to and including TEST 1.** Best Monster Detector goes to the highest TEST 1 accuracy, and the "most correct" / "all true monsters" bonuses come at HUNT and TEST 1.
 2. **After TEST 1, speed matters more than anything else.** Sprint to a valid FINAL post for 1st to Escape.
-3. **PREDICT:** ask the organisers at the start whether FINAL is valid without it. If another team is close to escaping, skip PREDICT (+3 at most) to protect the +10.
+3. **PREDICT is optional for FINAL** (see the clarification in `student-guide.md`). If another team is close to escaping, skip PREDICT (+3 at most) to protect the +10. Save any completed PREDICT work we want included.
 4. **Get every submission right the first time.** A resubmission resets our timestamp. Before posting, check the deliverables against the checklist below.
 5. **Showcase:** reuse what we've already built (detector output, a visual) rather than making new material.
 

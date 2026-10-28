@@ -65,10 +65,12 @@ Bonuses:
 - **+1 per spooky / Halloween-dressed team member**
 - Award entries as in the table above
 
+## FINAL readiness clarification
+
+The FINAL checklist supplied by the team on 28 October 2026 clarifies that SHOWCASE slides must be complete and the detector/output ready to demonstrate before posting FINAL. PREDICT is optional: save any completed PREDICT work the team wants included. See the full [Before posting FINAL checklist](submission.md#before-posting-final). This clarification supplements the PDF conversion above.
+
 ## Open questions (not stated in the guide)
 
 - **The remaining 10% of data.** Training is 80% and TEST 1 is 10%. The name "TEST 1" hints at a hidden holdout (a TEST 2?), but the guide doesn't say.
-- **Is a FINAL post valid without PREDICT?** Ask the organisers on the day and record the answer here.
 - **How "TEST 1 accuracy" is scored** (exact P_ID match? does monster type have to be correct? are false positives penalised?). Ask the organisers on the day.
-- **What makes a FINAL "valid"** (does it need showcase material ready?).
 - **Which data PREDICT runs on.** The slide template says "Find early signs in 10%", and the PREDICT workbook says data only up to 14 Nov 2023 and only the 5 behavioural monsters. Is it the TEST 1 10%, or the remaining 10%?

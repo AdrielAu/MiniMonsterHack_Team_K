@@ -31,6 +31,18 @@ Each workbook offers two routes: per-monster tabs feeding AUTO COMBINED, or MANU
 - [ ] The per-monster tabs and AUTO COMBINED are left empty (one route only). The TEST1/PREDICT AUTO COMBINED show `#VALUE!` when empty; that's expected.
 - [ ] File is saved in the private Teams channel under our file name.
 
+## Before posting FINAL
+
+Readiness checklist supplied by the team on 28 October 2026:
+
+- [ ] Completed and saved the HUNT submission.
+- [ ] Built and tested the Monster Detector on TEST 1.
+- [ ] Saved the TEST 1 Excel submission and slides.
+- [ ] Saved the working detector code.
+- [ ] Completed the SHOWCASE slides showing the strongest work the team produced.
+- [ ] Made sure the detector/output is ready to demonstrate.
+- [ ] Saved any PREDICT work completed and wanted for inclusion (PREDICT is optional).
+
 ## Slides (`.pptx`)
 
 - **15 slides maximum.** Each section has core slides plus up to 2 optional evidence slides. Delete the optional ones we don't use.
